@@ -1,0 +1,21 @@
+name: My first github action
+
+on:
+push:
+
+jobs:
+    build:
+    runs-on: ubuntu-latest
+
+    steps:
+    -name: clone the code
+      uses: actions\checkout@v2
+
+    -name: install NodeJS
+     uses: action\setup-node@v2
+     with:
+     node-vresion: 16
+     
+    -name: run the actual js file
+     run: node index.js
+     
